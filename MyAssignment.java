@@ -6,8 +6,7 @@
  * @description: This class will include 11 different methods which are called through the main method.
  */
 public class MyAssignment {
-
-    public static String reverseDoubleChar(String word){
+    public String reverseDoubleChar(String word){
         //method will print the string in reverse with each character repeated
         String str = "";
         for(int i = 1; i <= word.length(); i++){
@@ -17,7 +16,7 @@ public class MyAssignment {
         return str;
     }
 
-    public static int sumDigits(int n) {
+    public int sumDigits(int n) {
         //method will find the sum of a number's digits (ex:12 = 1+2 = 3)
         if (n == 0) {
             return 0;
@@ -31,17 +30,17 @@ public class MyAssignment {
         }
     }
 
-    public static String birthdayName(String name){
+    public String birthdayName(String name){
         //method will print "Happy Birthday !" with the given name
         return "Happy Birthday " + name + "!";
     }
 
-    public static String missingFront(String str){
+    public String missingFront(String str){
         //method prints out a string without the first three characters
         return str.substring(3);
     }
 
-    public static String swapEnds(String st) {
+    public String swapEnds(String st) {
         //swaps the first character of a string with the last character and vice versa
         if(st.length() <= 1){
             return st;
@@ -54,14 +53,14 @@ public class MyAssignment {
         }
     }
 
-    public static String nonStart(String a, String b) {
+    public String nonStart(String a, String b) {
         //combines two strings into one string without the first character of each string
         a = a.substring(1);
         b = b.substring(1);
         return a + b;
     }
 
-    public static int fibonacci(int n) {
+    public int fibonacci(int n) {
         //continues the fibonacci sequence until the nth term
         int a = 0;
         int b = 1;
@@ -75,7 +74,7 @@ public class MyAssignment {
         return c;
     }
 
-    public static int luckySum(int one, int two, int three) {
+    public int luckySum(int one, int two, int three) {
         //sums each number together unless one of the numbers is 13
         if(one == 13){
             return 0;
@@ -92,7 +91,7 @@ public class MyAssignment {
         }
     }
 
-    public static boolean powerOfTwo(int n) {
+    public boolean powerOfTwo(int n) {
         //returns if a value is a power of two
         if (n == 0) {
             return false;
@@ -111,7 +110,7 @@ public class MyAssignment {
         }
     }
 
-    public static String everyOther(String so){
+    public String everyOther(String so){
         //prints out a given string with every other character in the string
         String result = "";
         for(int i = 0; i < so.length(); i += 2){
@@ -121,7 +120,7 @@ public class MyAssignment {
         return result;
     }
 
-    public static boolean hasPalindrome(String ok){
+    public boolean hasPalindrome(String ok){
         for(int i = 0; i < ok.length(); i++){
             //checks for even length palindromes
             int left = i - 1;
@@ -143,37 +142,50 @@ public class MyAssignment {
     }
 
     public static void main(String[] args) {
-        String word = "house";
-        reverseDoubleChar(word);
+        MyAssignment object = new MyAssignment();
 
-        sumDigits(112);
+        String word = "house";
+        object.reverseDoubleChar(word);
+        System.out.println(object.reverseDoubleChar(word));
+
+        object.sumDigits(112);
+        System.out.println(object.sumDigits(112));
 
         String name = "Joseph";
-        birthdayName(name);
+        object.birthdayName(name);
+        System.out.println(object.birthdayName(name));
 
         String str = "kazoo";
-        missingFront(str);
+        object.missingFront(str);
+        System.out.println(object.missingFront(str));
 
         String st = "guitar";
-        swapEnds(st);
+        object.swapEnds(st);
+        System.out.println(object.swapEnds(st));
 
         String a = "cheese";
         String b = "pizza";
-        nonStart(a, b);
+        object.nonStart(a, b);
+        System.out.println(object.nonStart(a, b));
 
-        fibonacci(30);
+        object.fibonacci(30);
+        System.out.println(object.fibonacci(30));
 
         int one = 12;
         int two = 3;
         int three = 9;
-        luckySum(one, two, three);
+        object.luckySum(one, two, three);
+        System.out.println(object.luckySum(one, two, three));
 
-        powerOfTwo(12);
+        object.powerOfTwo(12);
+        System.out.println(object.powerOfTwo(12));
 
         String so = "music";
-        everyOther(so);
+        object.everyOther(so);
+        System.out.println(object.everyOther(so));
 
         String ok = "a nut for a jar of tuna";
-        hasPalindrome(ok);
+        object.hasPalindrome(ok);
+        System.out.println(object.hasPalindrome(ok));
     }
 }
